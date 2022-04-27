@@ -324,8 +324,6 @@ module.exports = function (webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
-        // Support for MUI using styled components https://mui.com/material-ui/guides/styled-engine/
-        '@mui/styled-engine': '@mui/styled-engine-sc',
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
@@ -737,11 +735,6 @@ module.exports = function (webpackEnv) {
                 noEmit: true,
                 incremental: true,
                 tsBuildInfoFile: paths.appTsBuildInfoFile,
-                paths: {
-                  '@mui/styled-engine': [
-                    './node_modules/@mui/styled-engine-sc',
-                  ],
-                },
               },
             },
             context: paths.appPath,
